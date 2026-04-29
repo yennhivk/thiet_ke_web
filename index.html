@@ -3,59 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cổng Thông Tin - yennhivk</title>
+    <title>Hồ Sơ Cá Nhân - yennhivk</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background-color: #f4f6f9; }
+        body { 
+            background-color: #f8f9fa; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         .portal-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
-            padding: 80px 0;
+            padding: 60px 0 100px 0;
             text-align: center;
+            position: relative;
+        }
+        .profile-wrapper {
+            margin-top: -80px;
+            text-align: center;
+        }
+        .avatar {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border: 6px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background-color: #e9ecef;
+            transition: transform 0.3s;
+        }
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fff;
+            color: #00f2fe;
+            font-size: 1.2rem;
+            margin: 0 5px;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .social-links a:hover {
+            background: #00f2fe;
+            color: #fff;
+            transform: translateY(-3px);
         }
         .folder-card {
             transition: all 0.3s;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
             text-decoration: none;
             color: inherit;
+            background: #fff;
         }
         .folder-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         .icon-bg {
-            height: 150px;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 3.5rem;
         }
-        .bg-tkweb { background-color: #ffeaa7; color: #ff7e67; }
-        .bg-info { background-color: #a1c4fd; color: #166d3b; }
-        .bg-music { background-color: #ff9a9e; color: #c82c3c; }
+        .bg-tkweb { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); color: #fff; }
+        .bg-info { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); color: #fff; }
+        .bg-music { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); color: #fff; }
+        .badge-skill {
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            margin: 3px;
+            border-radius: 30px;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Header Background -->
     <header class="portal-header shadow-sm">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-3">Chào mừng đến với Web Hosting của tôi</h1>
-            <p class="lead">Nơi lưu trữ các dự án học tập, thông tin cá nhân và sở thích âm nhạc.</p>
-        </div>
+        <div class="container"></div>
     </header>
 
-    <div class="container mt-5 mb-5">
-        <div class="row g-4">
+    <!-- Profile Section -->
+    <div class="container profile-wrapper">
+        <!-- Thay link src bằng đường dẫn ảnh thực tế của bạn -->
+        <img src="https://picsum.photos/250" alt="Avatar của tôi" class="avatar mb-3">
+        
+        <h1 class="fw-bold mb-1">Yến Nhi (yennhivk)</h1>
+        <p class="text-muted fs-5 mb-3">Sinh viên / Thiết kế Web / Lập trình</p>
+        
+        <div class="social-links mb-3 d-flex justify-content-center">
+            <a href="https://github.com/yennhivk" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:email-cua-ban@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+
+        <p class="mx-auto text-secondary" style="max-width: 600px;">
+            Xin chào! Trang web này là không gian thu nhỏ để tôi lưu giữ các sản phẩm đồ án thực hành môn thiết kế Web, 
+            trưng bày hồ sơ năng lực (CV) giống với một trang Porfolio chuyên nghiệp và cũng là nơi để trải nghiệm âm nhạc yêu thích.
+        </p>
+
+        <!-- Kỹ năng -->
+        <div class="mt-3 mb-5">
+            <span class="badge bg-primary badge-skill">HTML5 & CSS</span>
+            <span class="badge bg-secondary badge-skill">Bootstrap 5</span>
+            <span class="badge bg-success badge-skill">UI/UX Design</span>
+            <span class="badge bg-dark badge-skill">Git & GitHub</span>
+        </div>
+    </div>
+
+    <!-- Folders/Projects (Hoạt động) -->
+    <div class="container mb-5">
+        <h3 class="fw-bold text-center mb-4 pb-2">📂 Khám phá hoạt động của tôi</h3>
+        <div class="row g-4 justify-content-center">
             
             <!-- TK WEB -->
             <div class="col-md-4">
                 <a href="tk web/index.html" class="card folder-card border-0 shadow-sm d-block">
-                    <div class="icon-bg bg-tkweb">💻</div>
+                    <div class="icon-bg bg-tkweb"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="card-body text-center py-4">
                         <h4 class="card-title fw-bold">Thiết Kế Web</h4>
-                        <p class="card-text text-muted mb-0">Project portfolio cá nhân môn thiết kế web.</p>
+                        <p class="card-text text-muted mb-0">Hồ sơ năng lực riêng và sản phẩm đồ án các môn thiết kế.</p>
                     </div>
                 </a>
             </div>
@@ -63,10 +142,10 @@
             <!-- Thông tin cá nhân -->
             <div class="col-md-4">
                 <a href="thong tin ca nhan/" class="card folder-card border-0 shadow-sm d-block">
-                    <div class="icon-bg bg-info">📝</div>
+                    <div class="icon-bg bg-info"><i class="fa-regular fa-id-badge"></i></div>
                     <div class="card-body text-center py-4">
-                        <h4 class="card-title fw-bold">Thông Tin Cá Nhân</h4>
-                        <p class="card-text text-muted mb-0">Hồ sơ, CV và các thông tin liên hệ chi tiết.</p>
+                        <h4 class="card-title fw-bold">Thông Tin CV</h4>
+                        <p class="card-text text-muted mb-0">Lịch sử học tập, kỹ năng chuyên môn và dự án đã tham gia.</p>
                     </div>
                 </a>
             </div>
@@ -74,10 +153,10 @@
             <!-- Nhạc -->
             <div class="col-md-4">
                 <a href="nhac/" class="card folder-card border-0 shadow-sm d-block">
-                    <div class="icon-bg bg-music">🎵</div>
+                    <div class="icon-bg bg-music"><i class="fa-solid fa-headphones-simple"></i></div>
                     <div class="card-body text-center py-4">
-                        <h4 class="card-title fw-bold">Thư Mục Nhạc</h4>
-                        <p class="card-text text-muted mb-0">Bộ sưu tập các bài hát sở thích của bản thân.</p>
+                        <h4 class="card-title fw-bold">Kho Nhạc</h4>
+                        <p class="card-text text-muted mb-0">Playlist nhạc cá nhân và chia sẻ các sở thích nghệ thuật.</p>
                     </div>
                 </a>
             </div>
@@ -86,9 +165,12 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center py-4 mt-5 text-muted">
-        <p class="mb-0">&copy; 2026 Bản quyền thuộc về yennhivk. Được deploy bằng GitHub Pages.</p>
+    <footer class="text-center py-4 border-top bg-white">
+        <p class="text-muted fw-semibold mb-0">&copy; 2026 Bản quyền thuộc về yennhivk.</p>
+        <p class="small text-secondary mt-1">Sức mạnh mã nguồn mở được cung cấp bởi GitHub Pages</p>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
