@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Portfolio Cá Nhân</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/1920/600?random=10') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 5px solid #0d6efd;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
+        }
+        .media-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+        .custom-card {
+            transition: transform 0.3s;
+        }
+        .custom-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🔥 My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trai-nghiem.html">Trải nghiệm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kinh-nghiem.html">Kinh nghiệm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chia-se.html">Chia sẻ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lien-he.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container py-5">
+            <h1 class="hero-title mb-3">Xin chào, tôi là một Web Designer!</h1>
+            <p class="lead mb-4 fs-3">Chào mừng bạn đến với không gian sáng tạo và lưu giữ hành trình học tập của tôi.</p>
+            <a href="gioi-thieu.html" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-sm">Khám phá ngay</a>
+            <a href="lien-he.html" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill shadow-sm ms-3">Liên hệ với tôi</a>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="container mt-5 pt-5 mb-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Điểm Nhấn Nổi Bật</h2>
+            <div class="mx-auto" style="width: 80px; height: 4px; background-color: #0d6efd;"></div>
+        </div>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 custom-card border-0 shadow-sm">
+                    <img src="https://picsum.photos/400/300?random=11" class="card-img-top" alt="Học tập">
+                    <div class="card-body text-center">
+                        <h4 class="card-title fw-bold mt-2">Học Tập & Trải Nghiệm</h4>
+                        <p class="card-text text-muted">Những bước chân đầu tiên trong thế giới lập trình Web, từ lý thuyết đến thực hành.</p>
+                        <a href="trai-nghiem.html" class="btn btn-outline-primary rounded-pill">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 custom-card border-0 shadow-sm">
+                    <img src="https://picsum.photos/400/300?random=12" class="card-img-top" alt="Dự án">
+                    <div class="card-body text-center">
+                        <h4 class="card-title fw-bold mt-2">Dự Án Thực Tế</h4>
+                        <p class="card-text text-muted">Tổng hợp các sản phẩm và giao diện tôi đã xây dựng trong quá trình rèn luyện kỹ năng.</p>
+                        <a href="kinh-nghiem.html" class="btn btn-outline-primary rounded-pill">Xem ngay</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 custom-card border-0 shadow-sm">
+                    <img src="https://picsum.photos/400/300?random=13" class="card-img-top" alt="Chia sẻ">
+                    <div class="card-body text-center">
+                        <h4 class="card-title fw-bold mt-2">Chia Sẻ Kiến Thức</h4>
+                        <p class="card-text text-muted">Những góc nhìn thú vị, tài liệu hay và sự chia sẻ đam mê cùng cộng đồng.</p>
+                        <a href="chia-se.html" class="btn btn-outline-primary rounded-pill">Khám phá</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multimedia Section (Images, Audio, Video) -->
+    <section class="media-section mt-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold">Đa Phương Tiện</h2>
+                <p class="text-muted">Các file minh hoạ bao gồm video, âm thanh và hình ảnh.</p>
+            </div>
+            <div class="row align-items-center">
+                <!-- Video -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card border-0 shadow-sm p-3">
+                        <h5 class="fw-bold mb-3 text-center">🎬 Video Giới Thiệu</h5>
+                        <video width="100%" controls class="rounded shadow-sm">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ thẻ video.
+                        </video>
+                    </div>
+                </div>
+                <!-- Audio and extra image -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card border-0 shadow-sm p-4 mb-4" style="background-color: #e9ecef;">
+                        <h5 class="fw-bold mb-3">🎧 Audio / Podcast</h5>
+                        <audio controls class="w-100">
+                            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                            Trình duyệt của bạn không hỗ trợ thẻ audio.
+                        </audio>
+                        <p class="mt-3 text-muted mb-0 small">Hãy nghe lời chào qua đoạn ghi âm bên trên.</p>
+                    </div>
+                    <img src="https://picsum.photos/600/200?random=14" class="img-fluid rounded shadow-sm" alt="Hình ảnh banner nhỏ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0 fs-5">&copy; 2026 Bản quyền thiết kế thuộc về <span class="text-warning fw-bold">Tôi</span>.</p>
+            <small class="text-muted">Designd with Bootstrap 5 - Đồ án môn Thiết kế Web</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
