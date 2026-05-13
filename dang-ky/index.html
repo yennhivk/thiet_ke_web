@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Đánh giá rèn luyện sinh viên TVU</title>
+    <!-- Nhúng Font Awesome để hiển thị icon ẩn/hiện mật khẩu, email -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #eef2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-card {
+            background: white;
+            width: 450px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+        .login-header {
+            text-align: center;
+            padding: 30px 20px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+        .title-1 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin: 5px 0;
+        }
+        .title-2 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c2c2c;
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+        .login-body {
+            padding: 20px 30px 30px;
+        }
+        .input-group {
+            display: flex;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        .input-control {
+            flex: 1;
+            border: none;
+            padding: 12px 15px;
+            outline: none;
+            font-size: 15px;
+            color: #495057;
+        }
+        .input-control::placeholder {
+            color: #999;
+        }
+        .input-icon {
+            background-color: #e9ecef;
+            border-left: 1px solid #ced4da;
+            padding: 12px 15px;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .actions-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .remember-me input {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            accent-color: #007bff;
+        }
+        .btn {
+            border: none;
+            padding: 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            color: white;
+            transition: opacity 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .btn-login {
+            background-color: #007bff;
+            width: 55%; /* Tạo tỷ lệ nút đăng nhập so với phần nhớ mật khẩu */
+        }
+        .btn-ms {
+            background-color: #007bff;
+            margin-bottom: 10px;
+        }
+        .btn-tvu {
+            background-color: #dc3545;
+        }
+        .forgot-password {
+            display: block;
+            margin-top: 25px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="login-header">
+            <!-- Sử dụng trực tiếp logo của TVU -->
+            <img src="logo.jpg" alt="Logo Đại học Trà Vinh" class="logo">
+            <div class="title-1">PHẦN MỀM TIN HỌC</div>
+            <div class="title-2">ĐÁNH GIÁ KẾT QUẢ RÈN LUYỆN CHO SINH VIÊN CHÍNH QUY<br>TẠI ĐẠI HỌC TRÀ VINH</div>
+        </div>
+        
+        <div class="login-body">
+            <div class="input-group">
+                <input type="email" id="email" class="input-control" placeholder="Email">
+                <div class="input-icon"><i class="fas fa-envelope"></i></div>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" class="input-control" placeholder="Mật khẩu">
+                <div class="input-icon"><i class="fas fa-lock"></i></div>
+            </div>
+            
+            <div class="actions-row">
+                <label class="remember-me">
+                    <input type="checkbox"> Nhớ mật khẩu
+                </label>
+                <button type="button" id="loginBtn" class="btn btn-login">Đăng nhập</button>
+            </div>
+
+            <button type="button" class="btn btn-ms">Sinh viên (Đăng nhập bằng Email Microsoft)</button>
+            <button type="button" class="btn btn-tvu">Giảng viên (Đăng nhập bằng Email TVU)</button>
+
+            <a href="#" class="forgot-password">Quên mật khẩu?</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Giả lập tài khoản đúng để đăng nhập
+            if (email === 'admin@tvu.edu.vn' && password === '123456') {
+                // Chuyển hướng sang trang đăng ký
+                window.location.href = 'dang-ky.html';
+            } else {
+                alert('Tài khoản hoặc mật khẩu không đúng!\n(Gợi ý: Dùng email admin@tvu.edu.vn và pass 123456 để test)');
+            }
+        });
+    </script>
+</body>
+</html>

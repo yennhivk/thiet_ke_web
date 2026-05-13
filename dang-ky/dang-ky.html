@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin đăng ký</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            margin: 0;
+        }
+        .form-container {
+            background: white;
+            width: 650px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .form-header {
+            background-color: #88a658; /* Màu xanh lá như trong hình */
+            color: #000;
+            text-align: center;
+            padding: 25px;
+            font-size: 26px;
+            font-weight: bold;
+        }
+        .form-body {
+            padding: 30px 40px;
+        }
+        .form-group {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .form-group.align-top {
+            align-items: flex-start;
+        }
+        .form-label {
+            width: 160px;
+            font-weight: normal;
+            color: #111;
+            font-size: 16px;
+        }
+        .form-control-wrap {
+            flex: 1;
+        }
+        .form-control {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #777;
+            padding: 5px 0;
+            font-size: 15px;
+            outline: none;
+            background: transparent;
+        }
+        .form-control:focus {
+            border-bottom-color: #000;
+        }
+        .form-control::placeholder {
+            color: #999;
+        }
+        select.form-control {
+            appearance: none;
+            -webkit-appearance: none;
+            background: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .radio-group label, .checkbox-group label {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #222;
+            cursor: pointer;
+        }
+        textarea.form-control-box {
+            width: 100%;
+            height: 90px;
+            border: 1px solid #777;
+            padding: 10px;
+            font-size: 15px;
+            outline: none;
+            resize: none;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        .form-actions {
+            text-align: center;
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .btn {
+            background-color: #88a658;
+            border: 1px solid #000;
+            padding: 10px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #000;
+        }
+        .btn:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-header">
+            Thông tin đăng ký
+        </div>
+        <div class="form-body">
+            
+            <div class="form-group">
+                <div class="form-label">Họ tên:</div>
+                <div class="form-control-wrap">
+                    <input type="text" class="form-control" placeholder="Nhập họ tên">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">Ngày sinh:</div>
+                <div class="form-control-wrap">
+                    <input type="date" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">Giới tính:</div>
+                <div class="form-control-wrap radio-group">
+                    <label><input type="radio" name="gender" value="Nam"> Nam</label>
+                    <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">Địa chỉ:</div>
+                <div class="form-control-wrap">
+                    <input type="text" class="form-control" placeholder="Nhập địa chỉ">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">MSSV:</div>
+                <div class="form-control-wrap">
+                    <input type="text" class="form-control" placeholder="Nhập mã số sinh viên">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">Lớp:</div>
+                <div class="form-control-wrap">
+                    <select class="form-control">
+                        <option value="">DA25TTC</option>
+                        <option value="DA25TTD">DA25TTD</option>
+                        <option value="DA25TTE">DA25TTE</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">Số điện thoại:</div>
+                <div class="form-control-wrap">
+                    <input type="text" class="form-control" placeholder="Nhập số điện thoại">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">Email:</div>
+                <div class="form-control-wrap">
+                    <input type="email" class="form-control" placeholder="Nhập email">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">Ảnh đại diện:</div>
+                <div class="form-control-wrap">
+                    <input type="file" class="form-control" style="border:none; border-bottom:1px solid #777; padding-bottom:5px;">
+                </div>
+            </div>
+
+            <div class="form-group align-top">
+                <div class="form-label">Sở trường:</div>
+                <div class="form-control-wrap checkbox-group">
+                    <label><input type="checkbox" value="1"> Thiết kế web</label>
+                    <label><input type="checkbox" value="2"> Lập trình web</label>
+                    <label><input type="checkbox" value="3"> Thành thạo tiếng Trung</label>
+                </div>
+            </div>
+
+            <div class="form-group align-top" style="flex-direction: column; align-items: stretch;">
+                <div class="form-label" style="width:100%; margin-bottom:8px;">Mô tả sơ lược:</div>
+                <div class="form-control-wrap">
+                    <textarea class="form-control-box"></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn" onclick="window.location.href='index.html'">Hủy bỏ</button>
+                <button type="button" class="btn">Đăng ký</button>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>

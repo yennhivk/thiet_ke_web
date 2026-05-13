@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ Sơ CV - Yến Nhi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .cv-header { 
+            background: linear-gradient(135deg, #defa84 0%, #8fd3f4 100%); 
+            color: #fff; 
+            padding: 50px 0 30px; 
+            border-radius: 10px 10px 0 0; 
+        }
+        .cv-avatar { 
+            width: 160px; 
+            height: 160px; 
+            object-fit: cover; 
+            border: 4px solid #fff; 
+        }
+        .cv-container { 
+            background: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05); 
+            margin-top: 30px; 
+            margin-bottom: 50px; 
+        }
+        .section-title { 
+            border-bottom: 2px solid #84fab0; 
+            display: inline-block; 
+            padding-bottom: 5px; 
+            margin-bottom: 20px; 
+            font-weight: 700; 
+            color: #333;
+        }
+        .timeline-item { 
+            border-left: 2px solid #8fd3f4; 
+            padding-left: 20px; 
+            position: relative; 
+            margin-bottom: 25px; 
+        }
+        .timeline-item::before { 
+            content: ''; 
+            position: absolute; 
+            left: -9px; 
+            top: 2px; 
+            width: 16px; 
+            height: 16px; 
+            border-radius: 50%; 
+            background: #84fab0; 
+            border: 3px solid #fff;
+        }
+        .skill-bar { height: 8px; border-radius: 4px; background-color: #e9ecef; }
+        .contact-icon { width: 25px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <!-- Icon Home liên tiếp về trang chủ chính -->
+            <a class="navbar-brand text-light" href="../index.html" title="Về trang chủ chính">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                </svg>
+            </a>
+            <a class="navbar-brand fw-bold ms-2" href="index.html">Hồ Sơ Năng Lực (CV)</a>
+        </div>
+    </nav>
+
+    <!-- Bao bọc nội dung CV -->
+    <div class="container cv-container p-0 overflow-hidden">
+        
+        <!-- Phần Header CV -->
+        <div class="cv-header text-center">
+            <!-- Khu vực click để thay đổi ảnh Avatar CV -->
+            <label for="cvAvatarUpload" style="cursor: pointer; position: relative; display: inline-block;">
+                <img id="cvAvatarImage" src="https://picsum.photos/250" alt="Yến Nhi Avatar" class="cv-avatar rounded-circle mb-3 shadow" style="transition: 0.3s;">
+                <div style="position: absolute; bottom: 20px; right: 5px; background: #fff; border-radius: 50%; padding: 6px; box-shadow: 0 0 5px rgba(0,0,0,0.3);">
+                    <i class="fa-solid fa-camera text-success"></i>
+                </div>
+            </label>
+            <input type="file" id="cvAvatarUpload" accept="image/*" style="display: none;">
+            
+            <h1 class="fw-bold text-uppercase mb-1">Yến Nhi (yennhivk)</h1>
+            <p class="fs-5 mb-3 opacity-75">Sinh viên / Thiết kế Web / Lập trình Front-End</p>
+            
+            <!-- Thông tin liên hệ -->
+            <div class="d-flex flex-wrap justify-content-center gap-3 fs-6">
+                <a href="mailto:email-cua-ban@gmail.com" class="text-white text-decoration-none"><i class="fa-solid fa-envelope contact-icon"></i> email-cua-ban@gmail.com</a>
+                <span class="text-white d-none d-md-inline">|</span>
+                <span class="text-white"><i class="fa-solid fa-phone contact-icon"></i> 0123 456 789</span>
+                <span class="text-white d-none d-md-inline">|</span>
+                <a href="https://github.com/yennhivk" target="_blank" class="text-white text-decoration-none"><i class="fa-brands fa-github contact-icon"></i> github.com/yennhivk</a>
+            </div>
+        </div>
+
+        <!-- Phần Nội dung -->
+        <div class="row p-4 p-md-5">
+            
+            <!-- Cột trái (Mục tiêu, Kỹ năng) -->
+            <div class="col-lg-4 pe-lg-4 mb-4 mb-lg-0">
+                
+                <h3 class="section-title text-uppercase fs-5">Mục tiêu nghề nghiệp</h3>
+                <p class="text-muted text-justify">
+                    Áp dụng các kiến thức đã học về thiết kế và lập trình Web để tạo ra những sản phẩm có giao diện đẹp mắt, thân thiện với người dùng. Mong muốn được cống hiến, học hỏi môi trường thực tế và phát triển định hướng trở thành một Front-end Developer chuyên nghiệp.
+                </p>
+
+                <h3 class="section-title text-uppercase fs-5 mt-4">Kỹ năng Chuyên Môn</h3>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1 text-muted fw-bold small">
+                        <span>HTML5 / CSS3</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-success" style="width: 90%" role="progressbar"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1 text-muted fw-bold small">
+                        <span>Bootstrap 5</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-success" style="width: 85%" role="progressbar"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1 text-muted fw-bold small">
+                        <span>JavaScript ES6+</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-success" style="width: 70%" role="progressbar"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1 text-muted fw-bold small">
+                        <span>Figma (UI/UX)</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-success" style="width: 80%" role="progressbar"></div>
+                    </div>
+                </div>
+
+                <h3 class="section-title text-uppercase fs-5 mt-4">Ngoại ngữ</h3>
+                <ul class="list-unstyled text-muted">
+                    <li><strong><i class="fa-solid fa-language text-success me-2"></i> Tiếng Anh:</strong> Đọc hiểu tài liệu chuyên ngành, giao tiếp cơ bản.</li>
+                </ul>
+
+                <h3 class="section-title text-uppercase fs-5 mt-4">Sở thích</h3>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark border"><i class="fa-solid fa-music"></i> Nghe nhạc</span>
+                    <span class="badge bg-light text-dark border"><i class="fa-solid fa-code"></i> Code</span>
+                    <span class="badge bg-light text-dark border"><i class="fa-solid fa-camera"></i> Chụp ảnh</span>
+                </div>
+            </div>
+
+            <!-- Cột phải (Học vấn, Kinh nghiệm) -->
+            <div class="col-lg-8 ps-lg-4 border-start-lg">
+                
+                <h3 class="section-title text-uppercase fs-5">Trình độ Học Vấn</h3>
+                <div class="timeline-item">
+                    <h5 class="fw-bold mb-1">Chuyên ngành Công nghệ Thông tin</h5>
+                    <p class="text-success fw-semibold mb-1">Tên Trường Đại Học / Cao Đẳng của bạn &bull; 2023 - Hiện tại</p>
+                    <p class="text-muted">
+                        Tập trung vào các môn học lập trình cơ bản, cơ sở dữ liệu, phân tích thiết kế hệ thống và thiết kế giao diện Website (UI/UX). GPA tích lũy: X.X/4.0.
+                    </p>
+                </div>
+
+                <h3 class="section-title text-uppercase fs-5 mt-4">Kinh nghiệm & Dự án</h3>
+                <div class="timeline-item">
+                    <h5 class="fw-bold mb-1">Đồ án: Trang Website Bán Hàng Cơ Bản</h5>
+                    <p class="text-success fw-semibold mb-1">Front-End Developer (Cá nhân) &bull; Tháng 12/2025</p>
+                    <ul class="text-muted">
+                        <li>Phát triển giao diện người dùng hoàn chỉnh cho một trang thương mại điện tử bằng <strong>HTML, CSS, JS, Bootstrap 5</strong>.</li>
+                        <li>Đảm bảo tính tương thích (Responsive) hoạt động tốt trên cả PC và thiết bị di động (Mobile/Tablet).</li>
+                        <li>Áp dụng JavaScript để xử lý các chức năng: Giỏ hàng, tính tổng tiền, lọc sản phẩm.</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h5 class="fw-bold mb-1">Xây dựng Trang Portfolio Cá Nhân</h5>
+                    <p class="text-success fw-semibold mb-1">Thiết kế & Lập trình &bull; Hiện tại</p>
+                    <ul class="text-muted">
+                        <li>Tự thiết kế layout trên Figma và code hoàn thiện bằng HTML5 & Bootstrap framework.</li>
+                        <li>Triển khai đưa dự án lên GitHub Pages phục vụ làm hồ sơ năng lực trực tuyến.</li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title text-uppercase fs-5 mt-4">Chứng chỉ & Hoạt động nổi bật</h3>
+                <div class="timeline-item">
+                    <h5 class="fw-bold mb-1">Khóa học Lập trình Front-End cơ bản</h5>
+                    <p class="text-success fw-semibold mb-1">Coursera / F8 &bull; Năm 2025</p>
+                    <p class="text-muted">Đạt chứng chỉ hoàn thành khoá học xây dựng giao diện thực tế với HTML/CSS và Bootstrap.</p>
+                </div>
+                <div class="timeline-item pb-0 border-0 mb-0">
+                    <h5 class="fw-bold mb-1">Thành viên CLB / Đội nhóm IT</h5>
+                    <p class="text-muted">Thường xuyên tham gia các buổi trao đổi, chia sẻ kiến thức chuyên ngành lập trình tại trường.</p>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 text-muted bg-white border-top">
+        <p class="mb-0 fw-semibold">&copy; 2026 CV - Yến Nhi (yennhivk). Thiết kế với đam mê <i class="fa-solid fa-heart text-danger"></i></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cvAvatarImage = document.getElementById("cvAvatarImage");
+            const cvAvatarUpload = document.getElementById("cvAvatarUpload");
+
+            // Kiểm tra xem đã có ảnh lưu trong máy chưa (localStorage) dùng chung key hoặc key riêng
+            const savedAvatar = localStorage.getItem("userAvatar_cv");
+            if (savedAvatar) {
+                cvAvatarImage.src = savedAvatar;
+            }
+
+            // Xử lý khi chọn file ảnh mới
+            cvAvatarUpload.addEventListener("change", function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageData = e.target.result;
+                        // Hiển thị ảnh mới
+                        cvAvatarImage.src = imageData;
+                        // Lưu ảnh vào localStorage để tái sử dụng
+                        localStorage.setItem("userAvatar_cv", imageData);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

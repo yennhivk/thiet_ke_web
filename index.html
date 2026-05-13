@@ -9,76 +9,47 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { 
-            background-color: #f8f9fa; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .portal-header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            padding: 60px 0 100px 0;
-            text-align: center;
-            position: relative;
-        }
-        .profile-wrapper {
-            margin-top: -80px;
-            text-align: center;
-        }
-        .avatar {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border: 6px solid #fff;
-            border-radius: 50%;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            background-color: #e9ecef;
-            transition: transform 0.3s;
-        }
-        .avatar:hover {
-            transform: scale(1.05);
-        }
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #fff;
-            color: #00f2fe;
-            font-size: 1.2rem;
-            margin: 0 5px;
-            transition: all 0.3s;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .social-links a:hover {
-            background: #00f2fe;
-            color: #fff;
-            transform: translateY(-3px);
-        }
         .folder-card {
-            transition: all 0.3s;
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
+            transition: all 0.3s ease;
             text-decoration: none;
-            color: inherit;
             background: #fff;
         }
         .folder-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
         }
-        .icon-bg {
-            height: 140px;
+        .card-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .folder-card:hover .card-img-wrapper img {
+            transform: scale(1.1);
+        }
+        .card-icon-overlay {
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            color: #0d6efd;
+            z-index: 2;
         }
-        .bg-tkweb { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); color: #fff; }
-        .bg-info { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); color: #fff; }
-        .bg-music { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); color: #fff; }
         .badge-skill {
             font-size: 0.9rem;
             padding: 8px 15px;
@@ -89,24 +60,25 @@
 </head>
 <body>
 
-    <!-- Header Background -->
-    <header class="portal-header shadow-sm">
-        <div class="container"></div>
-    </header>
-
     <!-- Profile Section -->
-    <div class="container profile-wrapper">
-        <!-- Thay link src bằng đường dẫn ảnh thực tế của bạn -->
-        <img src="https://picsum.photos/250" alt="Avatar của tôi" class="avatar mb-3">
+    <div class="container profile-wrapper text-center mt-5">
+        <!-- Khu vực cho phép click để đổi avatar -->
+        <label for="avatarUpload" style="cursor: pointer; position: relative; display: inline-block;">
+            <img id="avatarImage" src="https://picsum.photos/250" alt="Avatar của tôi" class="avatar rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #ddd; transition: 0.3s;">
+            <div style="position: absolute; bottom: 15px; right: 0; background: #fff; border-radius: 50%; padding: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.3);">
+                <i class="fa-solid fa-camera text-primary"></i>
+            </div>
+        </label>
+        <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
         
         <h1 class="fw-bold mb-1">Yến Nhi (yennhivk)</h1>
         <p class="text-muted fs-5 mb-3">Sinh viên / Thiết kế Web / Lập trình</p>
         
-        <div class="social-links mb-3 d-flex justify-content-center">
-            <a href="https://github.com/yennhivk" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="#" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="mailto:email-cua-ban@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+        <div class="d-flex justify-content-center gap-3 mb-3">
+            <a href="#" class="btn btn-light rounded-circle shadow-sm" style="width:40px;height:40px;line-height:26px;color:#0dcaf0;"><i class="fab fa-github"></i></a>
+            <a href="#" class="btn btn-light rounded-circle shadow-sm" style="width:40px;height:40px;line-height:26px;color:#0dcaf0;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-light rounded-circle shadow-sm" style="width:40px;height:40px;line-height:26px;color:#0dcaf0;"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-light rounded-circle shadow-sm" style="width:40px;height:40px;line-height:26px;color:#0dcaf0;"><i class="far fa-envelope"></i></a>
         </div>
 
         <p class="mx-auto text-secondary" style="max-width: 600px;">
@@ -114,26 +86,37 @@
             trưng bày hồ sơ năng lực (CV) giống với một trang Porfolio chuyên nghiệp và cũng là nơi để trải nghiệm âm nhạc yêu thích.
         </p>
 
-        <!-- Kỹ năng -->
-        <div class="mt-3 mb-5">
+        <div class="mb-4">
             <span class="badge bg-primary badge-skill">HTML5 & CSS</span>
             <span class="badge bg-secondary badge-skill">Bootstrap 5</span>
             <span class="badge bg-success badge-skill">UI/UX Design</span>
             <span class="badge bg-dark badge-skill">Git & GitHub</span>
         </div>
+
+        <!-- Nút Đăng ký -->
+        <div class="mt-3 mb-5">
+            <a href="dang-ky/index.html" class="btn btn-primary px-4 py-2 rounded-pill fw-bold" style="background-color: #88a658; border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Đăng ký ngay</a>
+        </div>
+
+        
     </div>
 
     <!-- Folders/Projects (Hoạt động) -->
     <div class="container mb-5">
-        <h3 class="fw-bold text-center mb-4 pb-2">📂 Khám phá hoạt động của tôi</h3>
+        <h3 class="fw-bold text-center mb-5 pb-2">📂 Khám phá hoạt động của tôi</h3>
         <div class="row g-4 justify-content-center">
             
             <!-- TK WEB -->
             <div class="col-md-4">
-                <a href="tk web/index.html" class="card folder-card border-0 shadow-sm d-block">
-                    <div class="icon-bg bg-tkweb"><i class="fa-solid fa-laptop-code"></i></div>
-                    <div class="card-body text-center py-4">
-                        <h4 class="card-title fw-bold">Thiết Kế Web</h4>
+                <a href="tk web/index.html" class="card folder-card border-0 shadow d-block h-100">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Thiết Kế Web Hình Minh Họa">
+                        <div class="card-icon-overlay text-warning">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="card-body pt-4 pb-4 px-4 text-center">
+                        <h4 class="card-title fw-bold text-dark">Thiết Kế Web</h4>
                         <p class="card-text text-muted mb-0">Hồ sơ năng lực riêng và sản phẩm đồ án các môn thiết kế.</p>
                     </div>
                 </a>
@@ -141,10 +124,15 @@
 
             <!-- Thông tin cá nhân -->
             <div class="col-md-4">
-                <a href="thong tin ca nhan/" class="card folder-card border-0 shadow-sm d-block">
-                    <div class="icon-bg bg-info"><i class="fa-regular fa-id-badge"></i></div>
-                    <div class="card-body text-center py-4">
-                        <h4 class="card-title fw-bold">Thông Tin CV</h4>
+                <a href="thong tin ca nhan/" class="card folder-card border-0 shadow d-block h-100">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80" alt="Thông Tin CV Hình Minh Họa">
+                        <div class="card-icon-overlay text-info">
+                            <i class="fa-regular fa-id-badge"></i>
+                        </div>
+                    </div>
+                    <div class="card-body pt-4 pb-4 px-4 text-center">
+                        <h4 class="card-title fw-bold text-dark">Thông Tin CV</h4>
                         <p class="card-text text-muted mb-0">Lịch sử học tập, kỹ năng chuyên môn và dự án đã tham gia.</p>
                     </div>
                 </a>
@@ -152,10 +140,15 @@
 
             <!-- Nhạc -->
             <div class="col-md-4">
-                <a href="nhac/" class="card folder-card border-0 shadow-sm d-block">
-                    <div class="icon-bg bg-music"><i class="fa-solid fa-headphones-simple"></i></div>
-                    <div class="card-body text-center py-4">
-                        <h4 class="card-title fw-bold">Kho Nhạc</h4>
+                <a href="nhac/" class="card folder-card border-0 shadow d-block h-100">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=600&q=80" alt="Kho Nhạc Hình Minh Họa">
+                        <div class="card-icon-overlay text-danger">
+                            <i class="fa-solid fa-headphones-simple"></i>
+                        </div>
+                    </div>
+                    <div class="card-body pt-4 pb-4 px-4 text-center">
+                        <h4 class="card-title fw-bold text-dark">Kho Nhạc</h4>
                         <p class="card-text text-muted mb-0">Playlist nhạc cá nhân và chia sẻ các sở thích nghệ thuật.</p>
                     </div>
                 </a>
@@ -172,5 +165,33 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const avatarImage = document.getElementById("avatarImage");
+            const avatarUpload = document.getElementById("avatarUpload");
+
+            // Kiểm tra xem đã có ảnh lưu trong máy chưa (localStorage)
+            const savedAvatar = localStorage.getItem("userAvatar");
+            if (savedAvatar) {
+                avatarImage.src = savedAvatar;
+            }
+
+            // Xử lý khi chọn file ảnh mới
+            avatarUpload.addEventListener("change", function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageData = e.target.result;
+                        // Hiển thị ảnh mới
+                        avatarImage.src = imageData;
+                        // Lưu ảnh vào localStorage để tái sử dụng khi tải lại trang
+                        localStorage.setItem("userAvatar", imageData);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
